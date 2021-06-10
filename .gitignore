@@ -1,0 +1,5 @@
+sdl-game-engine/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+Debug/
