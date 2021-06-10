@@ -13,6 +13,7 @@ int main(int argc, char* argv[])
 
     // Load resources
     ResourceManager::loadFont("opensans", "fonts/OpenSans-Regular.ttf", 42);
+    ResourceManager::loadAudio("keysound", "sounds/pianokey.wav");
 
     // Load scenes
     SceneManager::addScene("simon", std::make_shared<Game>());
