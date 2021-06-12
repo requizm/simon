@@ -4,6 +4,9 @@
 #include "../../sdl-game-engine/ecs/components/transform.h"
 #include "../../sdl-game-engine/ecs/components/colliders/box_collider_2d.h"
 
+#include "../../colors.h"
+#include "color_button.h"
+
 Board::Board(const int boxWidth, const int boxHeight, const int margin)
 {
 	this->boxWidth = boxWidth;
@@ -15,40 +18,31 @@ void Board::init()
 {
 	entityManager = owner->entityManager;
 
-	// Create entities
-	green = entityManager->addEntity("Green");
+	// Calculate the positions for the color buttons
+	const int xCenter = (Window::getRect()->w - boxWidth) / 2;
+	const int yCenter = (Window::getRect()->h - boxHeight) / 2;
+	const float right = (float)(xCenter + (boxWidth / 2) + margin);
+	const float left = (float)(xCenter - (boxWidth / 2) - margin);
+	const float top = (float)(yCenter + (boxHeight / 2) + margin);
+	const float bottom = (float)(yCenter - (boxHeight / 2) - margin);
+
+	// Create the color button entities
 	red = entityManager->addEntity("Red");
+	green = entityManager->addEntity("Green");
 	blue = entityManager->addEntity("Blue");
 	yellow = entityManager->addEntity("Yellow");
 
-	// Get window center point
-	const int xCenter = (Window::getRect()->w - boxWidth) / 2;
-	const int yCenter = (Window::getRect()->h - boxHeight) / 2;
+	// Set the positions
+	red->getComponent<Transform>()->setPosition(right, bottom);
+	green->getComponent<Transform>()->setPosition(left, bottom);
+	blue->getComponent<Transform>()->setPosition(right, top);
+	yellow->getComponent<Transform>()->setPosition(left, top);
 
-	// Set up the positions
-	greenRect = { xCenter - (boxWidth / 2) - margin, yCenter + (boxHeight / 2) + margin, boxWidth, boxHeight };
-	redRect = { xCenter + (boxWidth / 2) + margin, yCenter + (boxHeight / 2) + margin, boxWidth, boxHeight };
-	blueRect = { xCenter + (boxWidth / 2) + margin, yCenter - (boxHeight / 2) - margin, boxWidth, boxHeight };
-	yellowRect = { xCenter - (boxWidth / 2) - margin, yCenter - (boxHeight / 2) - margin, boxWidth, boxHeight };
-
-	// Draw the rectangles
-	greenRectangle = Draw::rectangle(greenRect, 0, 140, 0, 255);
-	redRectangle = Draw::rectangle(redRect, 140, 0, 0, 255);
-	blueRectangle = Draw::rectangle(blueRect, 0, 0, 140, 255);
-	yellowRectangle = Draw::rectangle(yellowRect, 140, 140, 0, 255);
-
-	// Configure the rectangle entities
-	green->addComponent<BoxCollider2D>(boxWidth, boxHeight);
-	green->getComponent<Transform>()->setPosition((float)greenRect.x, (float)greenRect.y);
-
-	red->addComponent<BoxCollider2D>(boxWidth, boxHeight);
-	red->getComponent<Transform>()->setPosition((float)redRect.x, (float)redRect.y);
-
-	blue->addComponent<BoxCollider2D>(boxWidth, boxHeight);
-	blue->getComponent<Transform>()->setPosition((float)blueRect.x, (float)blueRect.y);
-
-	yellow->addComponent<BoxCollider2D>(boxWidth, boxHeight);
-	yellow->getComponent<Transform>()->setPosition((float)yellowRect.x, (float)yellowRect.y);
+	// Add the ColorButton component to all the color button entities
+	redButton = red->addComponent<ColorButton>(boxWidth, boxHeight, Color::red);
+	greenButton = green->addComponent<ColorButton>(boxWidth, boxHeight, Color::green);
+	blueButton = blue->addComponent<ColorButton>(boxWidth, boxHeight, Color::blue);
+	yellowButton = yellow->addComponent<ColorButton>(boxWidth, boxHeight, Color::yellow);
 }
 
 void Board::highlightColor(int color)
@@ -56,29 +50,27 @@ void Board::highlightColor(int color)
 	switch (color)
 	{
 	case 1:
-		yellowRectangle->r = 255;
-		yellowRectangle->g = 255;
+		yellowButton->highlight(Color::yellowHighlighted);
 		break;
 
 	case 2:
-		blueRectangle->b = 255;
+		blueButton->highlight(Color::blueHighlighted);
 		break;
 
 	case 3:
-		greenRectangle->g = 255;
+		greenButton->highlight(Color::greenHighlighted);
 		break;
 
 	case 4:
-		redRectangle->r = 255;
+		redButton->highlight(Color::redHighlighted);
 		break;
 	}
 }
 
 void Board::resetColors()
 {
-	redRectangle->r = 140;
-	greenRectangle->g = 140;
-	blueRectangle->b = 140;
-	yellowRectangle->r = 140;
-	yellowRectangle->g = 140;
+	redButton->resetColor();
+	greenButton->resetColor();
+	blueButton->resetColor();
+	yellowButton->resetColor();
 }
