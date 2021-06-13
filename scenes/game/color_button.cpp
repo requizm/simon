@@ -1,17 +1,19 @@
 #include "color_button.h"
 
 #include "../../sdl-game-engine/core/window.h"
-#include "../../sdl-game-engine/ecs/components/colliders/box_collider_2d.h"
 
-ColorButton::ColorButton(const int width, const int height, const SDL_Color& color)
+#include <iostream>
+
+ColorButton::ColorButton(const int width, const int height, const SDL_Color& color, const SDL_Color& highlightColor)
 {
 	rect = { 0, 0, width, height };
 	this->color = color;
+	this->highlightColor = highlightColor;
 }
 
-void ColorButton::init()
+void ColorButton::start()
 {
-	owner->addComponent<BoxCollider2D>(rect.w, rect.h);
+	collider = owner->addComponent<BoxCollider2D>(rect.w, rect.h);
 
 	transform = owner->getComponent<Transform>();
 
@@ -24,14 +26,20 @@ void ColorButton::update(float dt)
 	// Set the ColorButton position to the Transform position
 	rectangle->rect.x = (int)transform->x;
 	rectangle->rect.y = (int)transform->y;
+
+	if (collider->onMouseDown(SDL_BUTTON_LEFT))
+		highlight();
+
+	if (collider->onMouseUp(SDL_BUTTON_LEFT))
+		resetColor();
 }
 
-void ColorButton::highlight(const SDL_Color& highlightedColor)
+void ColorButton::highlight()
 {
-	rectangle->r = highlightedColor.r;
-	rectangle->g = highlightedColor.g;
-	rectangle->b = highlightedColor.b;
-	rectangle->a = highlightedColor.a;
+	rectangle->r = highlightColor.r;
+	rectangle->g = highlightColor.g;
+	rectangle->b = highlightColor.b;
+	rectangle->a = highlightColor.a;
 }
 
 void ColorButton::resetColor()

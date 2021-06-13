@@ -7,7 +7,7 @@
 #include <thread>
 #include <functional>
 
-void GameManager::init()
+void GameManager::start()
 {
 	entityManager = owner->entityManager;
 
@@ -24,7 +24,7 @@ void GameManager::init()
 	keyAudio = entityManager->addEntity("KeyAudio")->addComponent<AudioSource>("keysound");
 }
 
-void GameManager::start()
+void GameManager::startGame()
 {
 	startLabel->setActive(false);
 
@@ -74,6 +74,8 @@ void GameManager::addColors()
 
 void GameManager::addColor(int color)
 {
+	std::this_thread::sleep_for(std::chrono::milliseconds((long)(timeBetweenColors * 1000)));
+
 	board->highlightColor(color);
 
 	keyAudio->play();
@@ -83,8 +85,6 @@ void GameManager::addColor(int color)
 	std::this_thread::sleep_for(std::chrono::milliseconds((long)(timeHighlightedColor * 1000)));
 
 	board->resetColors();
-
-	std::this_thread::sleep_for(std::chrono::milliseconds((long)(timeBetweenColors * 1000)));
 }
 
 void GameManager::centerText()

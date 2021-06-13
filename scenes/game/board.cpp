@@ -14,7 +14,7 @@ Board::Board(const int boxWidth, const int boxHeight, const int margin)
 	this->margin = margin;
 }
 
-void Board::init()
+void Board::start()
 {
 	entityManager = owner->entityManager;
 
@@ -39,10 +39,10 @@ void Board::init()
 	yellow->getComponent<Transform>()->setPosition(left, top);
 
 	// Add the ColorButton component to all the color button entities
-	redButton = red->addComponent<ColorButton>(boxWidth, boxHeight, Color::red);
-	greenButton = green->addComponent<ColorButton>(boxWidth, boxHeight, Color::green);
-	blueButton = blue->addComponent<ColorButton>(boxWidth, boxHeight, Color::blue);
-	yellowButton = yellow->addComponent<ColorButton>(boxWidth, boxHeight, Color::yellow);
+	redButton = red->addComponent<ColorButton>(boxWidth, boxHeight, Color::red, Color::redHighlighted);
+	greenButton = green->addComponent<ColorButton>(boxWidth, boxHeight, Color::green, Color::greenHighlighted);
+	blueButton = blue->addComponent<ColorButton>(boxWidth, boxHeight, Color::blue, Color::blueHighlighted);
+	yellowButton = yellow->addComponent<ColorButton>(boxWidth, boxHeight, Color::yellow, Color::yellowHighlighted);
 }
 
 void Board::highlightColor(int color)
@@ -50,19 +50,19 @@ void Board::highlightColor(int color)
 	switch (color)
 	{
 	case 1:
-		yellowButton->highlight(Color::yellowHighlighted);
+		yellowButton->highlight();
 		break;
 
 	case 2:
-		blueButton->highlight(Color::blueHighlighted);
+		blueButton->highlight();
 		break;
 
 	case 3:
-		greenButton->highlight(Color::greenHighlighted);
+		greenButton->highlight();
 		break;
 
 	case 4:
-		redButton->highlight(Color::redHighlighted);
+		redButton->highlight();
 		break;
 	}
 }

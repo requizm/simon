@@ -12,6 +12,8 @@
 
 #include <vector>
 
+class Board;
+
 class GameManager : public Component
 {
 public:
@@ -21,8 +23,8 @@ public:
 	int guessCount = 0;
 
 public:
-	void init();
 	void start();
+	void startGame();
 	void nextTurn();
 	void gameOver();
 

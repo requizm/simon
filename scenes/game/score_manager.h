@@ -11,7 +11,7 @@
 class ScoreManager : public Component
 {
 public:
-	void init();
+	void start();
 	void increaseScore();
 	int getScore();
 	void reset();

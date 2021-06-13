@@ -7,11 +7,13 @@
 
 #include <SDL.h>
 
+class ColorButton;
+
 class Board : public Component
 {
 public:
 	Board(const int boxWidth, const int boxHeight, const int margin = 0);
-	void init();
+	void start();
 	void highlightColor(int color);
 	void resetColors();
 

@@ -6,7 +6,7 @@
 
 #include <sstream>
 
-void ScoreManager::init()
+void ScoreManager::start()
 {
 	entityManager = owner->entityManager;
 

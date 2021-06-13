@@ -9,6 +9,8 @@ void Game::start()
 {
 	// Create a ScoreManager
 	scoreManager = entityManager.addEntity("ScoreManager")->addComponent<ScoreManager>();
+
+	// Create the game board
 	entityManager.addEntity("Board")->addComponent<Board>(180, 180, 5);
 
 	// Create a GameManager
@@ -28,7 +30,7 @@ void Game::update(float dt)
 	{
 		if (!gameManager->isPlaying)
 		{
-			gameManager->start();
+			gameManager->startGame();
 		}
 	}
 
