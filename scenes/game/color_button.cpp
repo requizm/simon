@@ -1,8 +1,6 @@
 #include "color_button.h"
 
-#include "../../sdl-game-engine/core/window.h"
-
-#include <iostream>
+#include <sge/core/window.h>
 
 ColorButton::ColorButton(const int width, const int height, const SDL_Color& color, const SDL_Color& highlightColor)
 {

@@ -1,11 +1,10 @@
 #pragma once
 
-#include "../../sdl-game-engine/ecs/component.h"
-#include "../../sdl-game-engine/ecs/entity_manager.h"
-#include "../../sdl-game-engine/ecs/components/ui/label.h"
-#include "../../sdl-game-engine/ecs/components/transform.h"
-#include "../../sdl-game-engine/ecs/entity.h"
-
+#include <sge/ecs/component.h>
+#include <sge/ecs/entity_manager.h>
+#include <sge/ecs/components/ui/label.h>
+#include <sge/ecs/components/transform.h>
+#include <sge/ecs/entity.h>
 #include <SDL.h>
 
 class ScoreManager : public Component

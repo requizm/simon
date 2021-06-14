@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../sdl-game-engine/ecs/component.h"
-#include "../../sdl-game-engine/ecs/entity_manager.h"
-
 #include "color_button.h"
 
+#include <sge/ecs/component.h>
+#include <sge/ecs/entity_manager.h>
 #include <SDL.h>
 
 class ColorButton;

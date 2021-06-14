@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../sdl-game-engine/core/scene.h"
-#include "../sdl-game-engine/ecs/components/colliders/box_collider_2d.h"
-#include "../sdl-game-engine/ecs/components/audio_source.h"
-
 #include "game/game_manager.h"
 #include "game/score_manager.h"
+
+#include <sge/core/scene.h>
+#include <sge/ecs/components/colliders/box_collider_2d.h>
+#include <sge/ecs/components/audio_source.h>
 
 class Game : public Scene
 {

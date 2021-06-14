@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../sdl-game-engine/ecs/components/colliders/box_collider_2d.h"
-#include "../../sdl-game-engine/ecs/components/transform.h"
-#include "../../sdl-game-engine/ecs/component.h"
-#include "../../sdl-game-engine/core/draw.h"
-
+#include <sge/ecs/components/colliders/box_collider_2d.h>
+#include <sge/ecs/components/transform.h>
+#include <sge/ecs/component.h>
+#include <sge/core/draw.h>
 #include <SDL.h>
 
 class GameManager;

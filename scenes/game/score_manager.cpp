@@ -1,9 +1,8 @@
 #include "score_manager.h"
 
-#include "../../sdl-game-engine/core/window.h"
-
 #include "../../colors.h"
 
+#include <sge/core/window.h>
 #include <sstream>
 
 void ScoreManager::start()

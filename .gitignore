@@ -3,3 +3,4 @@ sdl-game-engine/
 *.vcxproj.filters
 *.vcxproj.user
 Debug/
+build/

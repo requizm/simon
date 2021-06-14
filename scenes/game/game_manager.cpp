@@ -1,9 +1,8 @@
 #include "game_manager.h"
 
-#include "../../sdl-game-engine/core/window.h"
-
 #include "../../colors.h"
 
+#include <sge/core/window.h>
 #include <thread>
 #include <functional>
 

@@ -1,9 +1,8 @@
-#include "sdl-game-engine/core/engine.h"
-#include "sdl-game-engine/core/managers/scene_manager.h"
-#include "sdl-game-engine/core/managers/resource_manager.h"
-
 #include "scenes/game.h"
 
+#include <sge/core/engine.h>
+#include <sge/core/managers/scene_manager.h>
+#include <sge/core/managers/resource_manager.h>
 #include <memory>
 
 int main(int argc, char* argv[])
