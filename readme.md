@@ -2,6 +2,8 @@
 
 Simon is a memorization game with colored buttons. This game is made with C++ and the [SDL Game Engine](https://github.com/JelleVos1/sdl-game-engine)
 
+![Game preview](images/simon.png)
+
 
 ## Setting up Simon
 
