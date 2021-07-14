@@ -17,7 +17,7 @@ include_directories(${SDL2_INCLUDE_DIR}
         ${SDL2_IMAGE_INCLUDE_DIR}
         ${SDL2_MIXER_INCLUDE_DIR}
         ${SDL2_TTF_INCLUDE_DIR}
-        ${SDL_GAME_ENGINE_INCLUDE_DIR}
+        ${WASE_ENGINE_INCLUDE_DIR}
 )
 
 add_executable(simon
@@ -65,5 +65,5 @@ target_link_libraries(simon ${SDL2_LIBRARY}
         ${SDL2_IMAGE_LIBRARIES}
         ${SDL2_MIXER_LIBRARIES}
         ${SDL2_TTF_LIBRARIES}
-        ${SDL_GAME_ENGINE_LIBRARIES}
+        ${WASE_ENGINE_LIBRARIES}
 )
