@@ -1,6 +1,6 @@
 # Simon
 
-Simon is a memorization game with colored buttons. This game is made with C++ and the [SDL Game Engine](https://github.com/JelleVos1/sdl-game-engine)
+Simon is a memorization game with colored buttons. This game is made with C++ and [Wase Engine](https://github.com/JelleVos1/wase-engine)
 
 ![Game preview](images/simon.png)
 
@@ -10,7 +10,7 @@ Simon is a memorization game with colored buttons. This game is made with C++ an
 Requirements:
 
  - CMake
- - [SDL Game Engine](https://github.com/JelleVos1/sdl-game-engine)
+ - [Wase Engine](https://github.com/JelleVos1/wase-engine)
  - SDL2
  - SDL2 image
  - SDL2 mixer
@@ -21,6 +21,6 @@ You can use the CMake GUI or you can run the following commands in the commandli
 ```
 mkdir build
 cd build
-cmake .. -D SDL_GAME_ENGINE_INCLUDE_DIR=path -D SDL_GAME_ENGINE_LIBRARIES=path
+cmake .. -D WASE_ENGINE_INCLUDE_DIR=path -D WASE_ENGINE_LIBRARIES=path
 cmake build .
 ```
