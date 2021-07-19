@@ -3,9 +3,9 @@
 #include "../../colors.h"
 #include "color_button.h"
 
-#include <sge/core/window.h>
-#include <sge/ecs/components/transform.h>
-#include <sge/ecs/components/colliders/box_collider_2d.h>
+#include <wase/core/window.h>
+#include <wase/ecs/components/transform.h>
+#include <wase/ecs/components/colliders/box_collider_2d.h>
 
 Board::Board(const int boxWidth, const int boxHeight, const int margin)
 {

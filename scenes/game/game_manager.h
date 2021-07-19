@@ -3,12 +3,12 @@
 #include "score_manager.h"
 #include "board.h"
 
-#include <sge/ecs/component.h>
-#include <sge/ecs/entity_manager.h>
-#include <sge/ecs/entity.h>
-#include <sge/ecs/components/ui/label.h>
-#include <sge/ecs/components/transform.h>
-#include <sge/ecs/components/audio_source.h>
+#include <wase/ecs/component.h>
+#include <wase/ecs/entity_manager.h>
+#include <wase/ecs/entity.h>
+#include <wase/ecs/components/ui/label.h>
+#include <wase/ecs/components/transform.h>
+#include <wase/ecs/components/audio_source.h>
 #include <vector>
 
 class Board;

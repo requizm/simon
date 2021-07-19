@@ -1,10 +1,10 @@
 #pragma once
 
-#include <sge/ecs/component.h>
-#include <sge/ecs/entity_manager.h>
-#include <sge/ecs/components/ui/label.h>
-#include <sge/ecs/components/transform.h>
-#include <sge/ecs/entity.h>
+#include <wase/ecs/component.h>
+#include <wase/ecs/entity_manager.h>
+#include <wase/ecs/components/ui/label.h>
+#include <wase/ecs/components/transform.h>
+#include <wase/ecs/entity.h>
 #include <SDL.h>
 
 class ScoreManager : public Component

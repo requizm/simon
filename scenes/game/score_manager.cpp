@@ -2,7 +2,7 @@
 
 #include "../../colors.h"
 
-#include <sge/core/window.h>
+#include <wase/core/window.h>
 #include <sstream>
 
 void ScoreManager::start()
@@ -36,7 +36,7 @@ void ScoreManager::reset()
 
 void ScoreManager::centerText()
 {
-	scoreTransform->setPosition(float((Window::getRect()->w - scoreLabel->getSize()->w) / 2), 20.0f);
+	scoreTransform->setPosition(float((Window::getRect()->w - scoreLabel->getSize().w) / 2), 20.0f);
 }
 
 void ScoreManager::refreshText()

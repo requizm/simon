@@ -2,7 +2,7 @@
 
 #include "../../colors.h"
 
-#include <sge/core/window.h>
+#include <wase/core/window.h>
 #include <thread>
 #include <functional>
 
@@ -88,5 +88,5 @@ void GameManager::addColor(int color)
 
 void GameManager::centerText()
 {
-	startText->getComponent<Transform>()->setPosition(float((Window::getRect()->w - startLabel->getSize()->w) / 2), (float)(Window::getRect()->h - 90));
+	startText->getComponent<Transform>()->setPosition(float((Window::getRect()->w - startLabel->getSize().w) / 2), (float)(Window::getRect()->h - 90));
 }

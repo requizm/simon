@@ -2,8 +2,8 @@
 
 #include "color_button.h"
 
-#include <sge/ecs/component.h>
-#include <sge/ecs/entity_manager.h>
+#include <wase/ecs/component.h>
+#include <wase/ecs/entity_manager.h>
 #include <SDL.h>
 
 class ColorButton;

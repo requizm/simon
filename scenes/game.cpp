@@ -3,7 +3,7 @@
 #include "game/board.h"
 #include "game/score_manager.h"
 
-#include <sge/core/input.h>
+#include <wase/core/input.h>
 
 void Game::start()
 {

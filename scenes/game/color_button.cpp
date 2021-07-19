@@ -1,6 +1,6 @@
 #include "color_button.h"
 
-#include <sge/core/window.h>
+#include <wase/core/window.h>
 
 ColorButton::ColorButton(const int width, const int height, const SDL_Color& color, const SDL_Color& highlightColor)
 {
@@ -22,8 +22,8 @@ void ColorButton::start()
 void ColorButton::update(float dt)
 {
 	// Set the ColorButton position to the Transform position
-	rectangle->rect.x = (int)transform->x;
-	rectangle->rect.y = (int)transform->y;
+	rectangle->rect.x = (int)transform->position.x;
+	rectangle->rect.y = (int)transform->position.y;
 
 	if (collider->onMouseDown(SDL_BUTTON_LEFT))
 		highlight();
