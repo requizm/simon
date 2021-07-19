@@ -1,6 +1,6 @@
 # Simon
 
-Simon is a memorization game with colored buttons. This game is made with C++ and [Wase Engine](https://github.com/JelleVos1/wase-engine)
+Simon is a memorization game with colored buttons. This game is made with C++ and [Wase Engine](https://github.com/Wase-Engine/wase-engine)
 
 ![Game preview](images/simon.png)
 
@@ -10,7 +10,7 @@ Simon is a memorization game with colored buttons. This game is made with C++ an
 Requirements:
 
  - CMake
- - [Wase Engine](https://github.com/JelleVos1/wase-engine)
+ - [Wase Engine](https://github.com/Wase-Engine/wase-engine)
  - SDL2
  - SDL2 image
  - SDL2 mixer
