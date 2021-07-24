@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
 
-set(CMAKE_GENERATOR_PLATFORM win32)
-
 project(simon)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -67,3 +65,7 @@ target_link_libraries(simon ${SDL2_LIBRARY}
         ${SDL2_TTF_LIBRARIES}
         ${WASE_ENGINE_LIBRARIES}
 )
+
+if(MINGW)
+    target_link_libraries(simon mingw32)
+endif(MINGW)
