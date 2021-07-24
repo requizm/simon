@@ -40,6 +40,7 @@ jobs:
       shell: bash
       run: |
         cmake -Bbuild -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$PWD/wase-engine/build/include -DWASE_ENGINE_LIBRARIES=$PWD/wase-engine/build/lib/libwase-engine.a
+        dir
         cd build
         make
   windows-mingw:
@@ -116,7 +117,8 @@ jobs:
         $env:SDL2IMAGEDIR = [System.Environment]::GetEnvironmentVariable("SDL2IMAGEDIR","Machine")
         $env:SDL2MIXERDIR = [System.Environment]::GetEnvironmentVariable("SDL2MIXERDIR","Machine")
         $env:SDL2TTFDIR = [System.Environment]::GetEnvironmentVariable("SDL2TTFDIR","Machine")
-        $Currentlocation = Get-Location
+        $Currentlocation = (Get-Item .).FullName
+        dir
         cmake -Bbuild -G "NMake Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$Currentlocation\wase-engine\build\include -DWASE_ENGINE_LIBRARIES=$Currentlocation\wase-engine\build\lib\wase-engine
         cd build
         nmake
