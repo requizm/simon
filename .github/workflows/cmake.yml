@@ -39,7 +39,7 @@ jobs:
     - name: build simon
       shell: bash
       run: |
-        cmake -Bbuild -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=./wase-engine/build/include -DWASE_ENGINE_LIBRARIES=./wase-engine/build/lib/libwase-engine.a
+        cmake -Bbuild -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$PWD/wase-engine/build/include -DWASE_ENGINE_LIBRARIES=$PWD/wase-engine/build/lib/libwase-engine.a
         cd build
         make
   windows-mingw:
@@ -145,6 +145,6 @@ jobs:
     - name: build simon
       shell: bash
       run: |
-        cmake -Bbuild -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=./wase-engine/build/include -DWASE_ENGINE_LIBRARIES=./wase-engine/build/lib/libwase-engine.a
+        cmake -Bbuild -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$PWD/wase-engine/build/include -DWASE_ENGINE_LIBRARIES=$PWD/wase-engine/build/lib/libwase-engine.a
         cd build
         make
