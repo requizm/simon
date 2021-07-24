@@ -11,6 +11,8 @@ find_package(SDL2_image REQUIRED)
 find_package(SDL2_mixer REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 
+add_subdirectory($CMAKE_SOURCE_DIR/wase-engine)
+
 include_directories(${SDL2_INCLUDE_DIR}
         ${SDL2_IMAGE_INCLUDE_DIR}
         ${SDL2_MIXER_INCLUDE_DIR}

@@ -31,22 +31,14 @@ jobs:
     - name: build wase-engine
       shell: bash
       run: |
-        cd ..
         git clone https://github.com/Wase-Engine/wase-engine.git
-        cd wase-engine
-        ls
-        mkdir build
-        cd build
-        cmake .. -G "Unix Makefiles"
-        ls
-        make
     - name: build simon
       shell: bash
       run: |
         ls
         mkdir build
         cd build
-        cmake .. -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$PWD/../../wase-engine/build/include -DWASE_ENGINE_LIBRARIES=$PWD/../../wase-engine/build/lib/libwase-engine.a
+        cmake .. -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$PWD/../wase-engine/build/include -DWASE_ENGINE_LIBRARIES=$PWD/../wase-engine/build/lib/libwase-engine.a
         ls
         make
   windows-mingw:
