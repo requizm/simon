@@ -28,11 +28,11 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libegl1-mesa-dev libgles2-mesa-dev
-    - name: build wase-engine
+    - name: clone wase-engine
       shell: bash
       run: |
         git clone https://github.com/Wase-Engine/wase-engine.git
-    - name: build simon
+    - name: build wase-engine and simon
       shell: bash
       run: |
         ls
@@ -67,10 +67,10 @@ jobs:
     - name: copy dll's
       shell: cmd
       run: mkdir build & xcopy "%CD%\SDL2-2.0.14\x86_64-w64-mingw32\bin\SDL2.dll" "%CD%\build" & xcopy "%CD%\SDL2_image-2.0.5\x86_64-w64-mingw32\bin\SDL2_image.dll" "%CD%\build" & xcopy "%CD%\SDL2_mixer-2.0.4\x86_64-w64-mingw32\bin\SDL2_mixer.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\x86_64-w64-mingw32\bin\SDL2_ttf.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\x86_64-w64-mingw32\bin\zlib1.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\x86_64-w64-mingw32\bin\libfreetype-6.dll" "%CD%\build"
-    - name: build wase-engine
+    - name: clone wase-engine
       shell: cmd
-      run: refreshenv & git clone https://github.com/Wase-Engine/wase-engine.git & cd wase-engine & cmake -Bbuild -G "MinGW Makefiles" & cd build & mingw32-make.exe
-    - name: build simon
+      run: git clone https://github.com/Wase-Engine/wase-engine.git
+    - name: build wase-engine and simon
       shell: cmd
       run: refreshenv & cmake -Bbuild -G "MinGW Makefiles" -DWASE_ENGINE_INCLUDE_DIR=%CD%\wase-engine\build\include -DWASE_ENGINE_LIBRARIES=%CD%\wase-engine\build\lib\libwase-engine.a & cd build & mingw32-make.exe
 
@@ -98,18 +98,10 @@ jobs:
     - name: copy dll's
       shell: cmd
       run: mkdir build & xcopy "%CD%\SDL2-2.0.14\lib\x64\SDL2.dll" "%CD%\build" & xcopy "%CD%\SDL2_image-2.0.5\lib\x64\SDL2_image.dll" "%CD%\build" & xcopy "%CD%\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\lib\x64\zlib1.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\lib\x64\libfreetype-6.dll" "%CD%\build"
-    - name: build wase-engine
+    - name: clone wase-engine
       run: |
-        $env:SDL2DIR = [System.Environment]::GetEnvironmentVariable("SDL2DIR","Machine")
-        $env:SDL2IMAGEDIR = [System.Environment]::GetEnvironmentVariable("SDL2IMAGEDIR","Machine")
-        $env:SDL2MIXERDIR = [System.Environment]::GetEnvironmentVariable("SDL2MIXERDIR","Machine")
-        $env:SDL2TTFDIR = [System.Environment]::GetEnvironmentVariable("SDL2TTFDIR","Machine")
         git clone https://github.com/Wase-Engine/wase-engine.git
-        cd wase-engine
-        cmake -Bbuild -G "NMake Makefiles"
-        cd build
-        nmake
-    - name: build simon
+    - name: build wase-engine and simon
       run: |
         $env:SDL2DIR = [System.Environment]::GetEnvironmentVariable("SDL2DIR","Machine")
         $env:SDL2IMAGEDIR = [System.Environment]::GetEnvironmentVariable("SDL2IMAGEDIR","Machine")
@@ -134,18 +126,11 @@ jobs:
         brew install sdl2_image
         brew install sdl2_mixer
         brew install sdl2_ttf
-    - name: build wase-engine
+    - name: clone wase-engine
       shell: bash
       run: |
         git clone https://github.com/Wase-Engine/wase-engine.git
-        cd wase-engine
-        ls
-        cmake -Bbuild -G "Unix Makefiles"
-        ls
-        cd build
-        ls
-        make
-    - name: build simon
+    - name: build wase-engine and simon
       shell: bash
       run: |
         ls
