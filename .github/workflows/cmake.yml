@@ -34,18 +34,18 @@ jobs:
         git clone https://github.com/Wase-Engine/wase-engine.git
         cd wase-engine
         ls
-        cmake -Bbuild -G "Unix Makefiles"
-        ls
+        mkdir build
         cd build
+        cmake .. -G "Unix Makefiles"
         ls
         make
     - name: build simon
       shell: bash
       run: |
         ls
-        cmake -Bbuild -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$PWD/wase-engine/build/include -DWASE_ENGINE_LIBRARIES=$PWD/wase-engine/build/lib/libwase-engine.a
-        ls
+        mkdir build
         cd build
+        cmake .. -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$PWD/../wase-engine/build/include -DWASE_ENGINE_LIBRARIES=$PWD/../wase-engine/build/lib/libwase-engine.a
         ls
         make
   windows-mingw:
