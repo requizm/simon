@@ -5,6 +5,8 @@
 #include <wase/core/managers/resource_manager.h>
 #include <memory>
 
+using namespace wase;
+
 int main(int argc, char* argv[])
 {
     // Initialize engine

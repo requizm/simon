@@ -5,6 +5,8 @@
 
 #include <wase/core/input.h>
 
+using namespace wase;
+
 void Game::start()
 {
 	// Create a ScoreManager

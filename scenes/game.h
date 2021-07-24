@@ -7,6 +7,8 @@
 #include <wase/ecs/components/colliders/box_collider_2d.h>
 #include <wase/ecs/components/audio_source.h>
 
+using namespace wase;
+
 class Game : public Scene
 {
 public:

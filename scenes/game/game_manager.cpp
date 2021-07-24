@@ -6,6 +6,8 @@
 #include <thread>
 #include <functional>
 
+using namespace wase;
+
 void GameManager::start()
 {
 	entityManager = owner->entityManager;

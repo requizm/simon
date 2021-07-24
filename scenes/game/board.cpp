@@ -7,6 +7,8 @@
 #include <wase/ecs/components/transform.h>
 #include <wase/ecs/components/colliders/box_collider_2d.h>
 
+using namespace wase;
+
 Board::Board(const int boxWidth, const int boxHeight, const int margin)
 {
 	this->boxWidth = boxWidth;

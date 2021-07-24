@@ -11,6 +11,8 @@
 #include <wase/ecs/components/audio_source.h>
 #include <vector>
 
+using namespace wase;
+
 class Board;
 
 class GameManager : public Component

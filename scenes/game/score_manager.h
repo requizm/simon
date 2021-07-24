@@ -7,6 +7,8 @@
 #include <wase/ecs/entity.h>
 #include <SDL.h>
 
+using namespace wase;
+
 class ScoreManager : public Component
 {
 public:

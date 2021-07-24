@@ -5,6 +5,8 @@
 #include <wase/core/window.h>
 #include <sstream>
 
+using namespace wase;
+
 void ScoreManager::start()
 {
 	entityManager = owner->entityManager;

@@ -6,6 +6,8 @@
 #include <wase/ecs/entity_manager.h>
 #include <SDL.h>
 
+using namespace wase;
+
 class ColorButton;
 
 class Board : public Component

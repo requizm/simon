@@ -2,6 +2,8 @@
 
 #include <wase/core/window.h>
 
+using namespace wase;
+
 ColorButton::ColorButton(const int width, const int height, const SDL_Color& color, const SDL_Color& highlightColor)
 {
 	rect = { 0, 0, width, height };

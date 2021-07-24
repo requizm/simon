@@ -6,6 +6,8 @@
 #include <wase/core/draw.h>
 #include <SDL.h>
 
+using namespace wase;
+
 class GameManager;
 
 class ColorButton : public Component
