@@ -34,14 +34,17 @@ jobs:
         git clone https://github.com/Wase-Engine/wase-engine.git
         cd wase-engine
         cmake -Bbuild -G "Unix Makefiles"
+        ls
         cd build
+        ls
         make
     - name: build simon
       shell: bash
       run: |
         cmake -Bbuild -G "Unix Makefiles" -DWASE_ENGINE_INCLUDE_DIR=$PWD/wase-engine/build/include -DWASE_ENGINE_LIBRARIES=$PWD/wase-engine/build/lib/libwase-engine.a
-        dir
+        ls
         cd build
+        ls
         make
   windows-mingw:
     # The CMake configure and build commands are platform agnostic and should work equally
