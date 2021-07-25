@@ -19,8 +19,11 @@ Requirements:
 
 You can use the CMake GUI or you can run the following commands in the commandline:
 ```
+git clone https://github.com/JelleVos1/simon.git
+cd simon
+git clone https://github.com/Wase-Engine/wase-engine.git
 mkdir build
 cd build
-cmake .. -D WASE_ENGINE_INCLUDE_DIR=path -D WASE_ENGINE_LIBRARIES=path
+cmake ..
 cmake build .
 ```
