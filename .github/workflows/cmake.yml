@@ -31,15 +31,13 @@ jobs:
     - name: clone wase-engine
       shell: bash
       run: |
-        git clone --branch NewCmakelist https://github.com/requizm/wase-engine.git
+        git clone https://github.com/Wase-Engine/wase-engine.git
     - name: build wase-engine and simon
       shell: bash
       run: |
-        ls
         mkdir build
         cd build
         cmake .. -G "Unix Makefiles"
-        ls
         make
   windows-mingw:
     # The CMake configure and build commands are platform agnostic and should work equally
@@ -69,7 +67,7 @@ jobs:
       run: mkdir build & xcopy "%CD%\SDL2-2.0.14\x86_64-w64-mingw32\bin\SDL2.dll" "%CD%\build" & xcopy "%CD%\SDL2_image-2.0.5\x86_64-w64-mingw32\bin\SDL2_image.dll" "%CD%\build" & xcopy "%CD%\SDL2_mixer-2.0.4\x86_64-w64-mingw32\bin\SDL2_mixer.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\x86_64-w64-mingw32\bin\SDL2_ttf.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\x86_64-w64-mingw32\bin\zlib1.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\x86_64-w64-mingw32\bin\libfreetype-6.dll" "%CD%\build"
     - name: clone wase-engine
       shell: cmd
-      run: git clone --branch NewCmakelist https://github.com/requizm/wase-engine.git
+      run: git clone https://github.com/Wase-Engine/wase-engine.git
     - name: build wase-engine and simon
       shell: cmd
       run: refreshenv & cmake -Bbuild -G "MinGW Makefiles" & cd build & mingw32-make.exe
@@ -100,15 +98,13 @@ jobs:
       run: mkdir build & xcopy "%CD%\SDL2-2.0.14\lib\x64\SDL2.dll" "%CD%\build" & xcopy "%CD%\SDL2_image-2.0.5\lib\x64\SDL2_image.dll" "%CD%\build" & xcopy "%CD%\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\lib\x64\zlib1.dll" "%CD%\build" & xcopy "%CD%\SDL2_ttf-2.0.15\lib\x64\libfreetype-6.dll" "%CD%\build"
     - name: clone wase-engine
       run: |
-        git clone --branch NewCmakelist https://github.com/requizm/wase-engine.git
+        git clone https://github.com/Wase-Engine/wase-engine.git
     - name: build wase-engine and simon
       run: |
         $env:SDL2DIR = [System.Environment]::GetEnvironmentVariable("SDL2DIR","Machine")
         $env:SDL2IMAGEDIR = [System.Environment]::GetEnvironmentVariable("SDL2IMAGEDIR","Machine")
         $env:SDL2MIXERDIR = [System.Environment]::GetEnvironmentVariable("SDL2MIXERDIR","Machine")
         $env:SDL2TTFDIR = [System.Environment]::GetEnvironmentVariable("SDL2TTFDIR","Machine")
-        $Currentlocation = (Get-Item .).FullName
-        dir
         cmake -Bbuild -G "NMake Makefiles"
         cd build
         nmake
@@ -129,13 +125,10 @@ jobs:
     - name: clone wase-engine
       shell: bash
       run: |
-        git clone --branch NewCmakelist https://github.com/requizm/wase-engine.git
+        git clone https://github.com/Wase-Engine/wase-engine.git
     - name: build wase-engine and simon
       shell: bash
       run: |
-        ls
         cmake -Bbuild -G "Unix Makefiles"
-        ls
         cd build
-        ls
         make
